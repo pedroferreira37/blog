@@ -6,7 +6,6 @@
 
 	export let data;
 
-	console.log(data.content);
 	const inShareUrl = new URL('https://www.linkedin.com/sharing/share-offsite');
 	inShareUrl.searchParams.set('url', $page.url.toString());
 
