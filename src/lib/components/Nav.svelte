@@ -2,8 +2,15 @@
 	import Close from './ui/Close.svelte';
 	import Hamburguer from './ui/Hamburguer.svelte';
 	import NavLinks from './NavLinks.svelte';
+	import { browser } from '$app/environment';
 
 	let open = false;
+
+	$: {
+		if (browser) {
+			open ? document.body.classList.add('open') : document.body.classList.remove('open');
+		}
+	}
 </script>
 
 <nav class="py-4 h-[60px]">
@@ -28,3 +35,9 @@
 		<NavLinks />
 	</ul>
 {/if}
+
+<style>
+	:global(body.open) {
+		overflow: hidden;
+	}
+</style>
