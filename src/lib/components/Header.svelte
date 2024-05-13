@@ -4,7 +4,7 @@
 
 	let scroll: number = 0;
 
-	function onscroll(e: any) {
+	function onscroll() {
 		scroll = window.scrollY;
 	}
 
@@ -22,12 +22,20 @@
 <header
 	class="sticky top-0 {scroll > 0
 		? 'border-b'
-		: ''} transition-all z-1 mx-auto [&>*]:px-4 flex w-full flex-wrap items-center justify-between bg-[#fbfbfb] z-1000"
+		: 'border-none'} transition-all layout [&>*]:col-start-2 z-1 mx-auto bg-[#fbfbfb] z-1000"
 >
-	<a href="/">
-		<img src="/avatar.jpg" class="w-8 rounded-full" alt="Homem caucasiano de cabelo crespo" />
-	</a>
-	<Nav />
+	<div class="layout [&>*]:col-start-2 w-full">
+		<div class="flex justify-between items-center">
+			<a href="/">
+				<img
+					src="/avatar.jpg"
+					class="w-8 rounded-full"
+					alt="Homem caucasiano de cabelo crespo"
+				/>
+			</a>
+			<Nav />
+		</div>
+	</div>
 </header>
 
 <style>

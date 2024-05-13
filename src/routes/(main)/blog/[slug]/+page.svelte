@@ -3,10 +3,10 @@
 	import { formatDate } from '$lib';
 	import Share from '$lib/components/Share.svelte';
 	import ArrowLeft from '$lib/components/ui/ArrowLeft.svelte';
-	import type { Post } from '$lib/type.js';
 
-	export let data: { meta: Post; content: any };
+	export let data;
 
+	console.log(data.content);
 	const inShareUrl = new URL('https://www.linkedin.com/sharing/share-offsite');
 	inShareUrl.searchParams.set('url', $page.url.toString());
 
@@ -22,7 +22,6 @@
 	<meta property="og:url" content={$page.url.toString()} />
 	<meta property="og:description" content={data.meta.description} />
 	<script src="https://platform.linkedin.com/in.js" type="text/javascript">
-		lang: en_US;
 	</script>
 	<script type="IN/Share" data-url="https://www.linkedin.com"></script>
 </svelte:head>
@@ -54,13 +53,23 @@
 		</hgroup>
 
 		<div class="col-start-2 md:col-start-1 mb-8 md:px-12">
-			<Share inShareUrl={inShareUrl.toString()} twitterShareUrl={twitterShareUrl.toString()} />
+			<Share
+				inShareUrl={inShareUrl.toString()}
+				twitterShareUrl={twitterShareUrl.toString()}
+			/>
 		</div>
 
 		<div class="col-start-2">
 			<div class="prose">
 				<svelte:component this={data.content} />
 			</div>
+		</div>
+
+		<div class="col-start-2 mb-8">
+			<Share
+				inShareUrl={inShareUrl.toString()}
+				twitterShareUrl={twitterShareUrl.toString()}
+			/>
 		</div>
 	</article>
 </div>
