@@ -28,7 +28,6 @@
 <div class="mt-[12vh]">
 	<article
 		class="layout
-
 	[&>*]:[&>h2]:capitalize
 	[&>h2]:text-lg
 	[&>h2]:font-bold
