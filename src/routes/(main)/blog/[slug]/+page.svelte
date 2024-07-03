@@ -6,7 +6,6 @@
 
 	export let data;
 
-	console.log(data.content);
 	const inShareUrl = new URL('https://www.linkedin.com/sharing/share-offsite');
 	inShareUrl.searchParams.set('url', $page.url.toString());
 
@@ -29,7 +28,6 @@
 <div class="mt-[12vh]">
 	<article
 		class="layout
-
 	[&>*]:[&>h2]:capitalize
 	[&>h2]:text-lg
 	[&>h2]:font-bold

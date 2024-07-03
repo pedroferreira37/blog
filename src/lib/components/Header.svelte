@@ -22,7 +22,7 @@
 <header
 	class="sticky top-0 {scroll > 0
 		? 'border-b'
-		: 'border-none'} transition-all layout [&>*]:col-start-2 z-1 mx-auto bg-[#fbfbfb] z-1000"
+		: 'border-none'} px-4 transition-all layout [&>*]:col-start-2 z-1 mx-auto bg-[#fbfbfb] z-1000"
 >
 	<div class="layout [&>*]:col-start-2 w-full">
 		<div class="flex justify-between items-center">
